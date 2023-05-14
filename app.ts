@@ -1,11 +1,34 @@
-function add(n1:number, n2:number){
-    return n1 + n2
+// explicitly setting type of roles
+const person:{
+    name: string;
+    age: number;
+    hobbies: string[];
+    role: [number, string];
+} = {
+    name: 'Naser',
+    age: 32,
+    hobbies: ['chess', 'watch movie'],
+    role: [2, 'author']
 }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true
 
+// const person = {
+//     name: 'Naser',
+//     age: 32,
+//     hobbies: ['chess', 'watch movie'],
+//     role: [2, 'author']
+// }
 
-const result =add(number1, number2)
-console.log(result);
+// push method is an exception which even by using Tuple, Typescript can't catch error 
+person.role.push('admin')
+// person.role[1]=10 // because of using Tuple, catch error
+
+let favoriteActivities:string[];
+favoriteActivities = ['sport', 'movie']
+console.log(person.name)
+
+for(const hobby of person.hobbies){
+    console.log(hobby.toUpperCase());
+    // console.log(hobby.map()); // !!! ERROR !!!
+    
+}
