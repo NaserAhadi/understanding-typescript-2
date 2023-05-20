@@ -1,39 +1,28 @@
-// explicitly setting type of roles
-// const person:{
-//     name: string;
-//     age: number;
-//     hobbies: string[];
-//     role: [number, string];
-// } = {
-//     name: 'Naser',
-//     age: 32,
-//     hobbies: ['chess', 'watch movie'],
-//     role: [2, 'author']
-// }
+// UNION TYPES
+function combine(
+  input1: number | string,
+  input2: number | string,
+  resultConversion: "as-number" | "as-text"
+) {
+  let result;
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
 
-enum Role {ADMIN='admin', READ_ONLY=0, AUTHOR }
-
-const person = {
-    name: 'Naser',
-    age: 32,
-    hobbies: ['chess', 'watch movie'],
-    role: Role.ADMIN
+  if (resultConversion === "as-number") {
+    return +result;
+  } else {
+    return result.toString();
+  }
 }
 
-// push method is an exception which even by using Tuple, Typescript can't catch error 
-// person.role.push('admin')
-// person.role[1]=10 // because of using Tuple, catch error
+const combineAges = combine(30, 56, "as-number");
+console.log(combineAges);
 
-let favoriteActivities:string[];
-favoriteActivities = ['sport', 'movie']
-console.log(person.name)
+const combineStringAges = combine("30", "56", "as-number");
+console.log(combineStringAges);
 
-for(const hobby of person.hobbies){
-    console.log(hobby.toUpperCase());
-    // console.log(hobby.map()); // !!! ERROR !!!
-    
-}
-
-if(person.role === Role.ADMIN){
-    console.log('is admin');
-}
+const combineNames = combine("Max", "Anna", "as-text");
+console.log(combineNames);
