@@ -8,3 +8,7 @@ userName = "Max";
 if (typeof userInput === "string") {
     userName = userInput;
 }
+function generateError(message, code) {
+    throw { message: message, codeError: code };
+}
+generateError("An error occured", 500);
