@@ -16,3 +16,7 @@ function generateError(message: string, code: number): never {
 }
 
 generateError("An error occured", 500);
+
+// if log the function we see it never return anything
+// const result = generateError("An error occured", 500);
+// console.log(result);
