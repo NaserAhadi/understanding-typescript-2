@@ -12,7 +12,7 @@
 
     /* Language and Environment */
     "target": "es2016",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    // "lib": [],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    // "lib": ["DOM","DOM.Iterable","ES2016","ScriptHost"],                                        /* Specify a set of bundled library declaration files that describe the target runtime environment. */
     // "jsx": "preserve",                                /* Specify what JSX code is generated. */
     // "experimentalDecorators": true,                   /* Enable experimental support for legacy experimental decorators. */
     // "emitDecoratorMetadata": true,                    /* Emit design-type metadata for decorated declarations in source files. */
@@ -105,5 +105,22 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  }
+  },
+  // all files which we input in exclude array, they are not compiled
+  "exclude":[
+    // "analytics.ts",
+    // "functions.ts",
+    "node_modules", //  would be the default
+    "*.dev.ts",  // any file with extension of .dev.ts
+    "**/*.dev.ts" // in any directory and any file with extension of .dev.ts
+  ],
+  // all files which we input in include array, only they are compiled
+  "include": [
+    "analytics.ts",
+    "app.ts"
+  ],
+  // files is like include but the difference is we can't set directory in the list and just set file name
+  // "files":[
+  //   "app.ts"
+  // ]
 }

@@ -22,3 +22,9 @@ function generateError(message: string, code: number): never {
 // console.log(result);
 
 console.log(555);
+
+const button = document.querySelector("button");
+
+button?.addEventListener("click", () => {
+  console.log("clicked");
+});

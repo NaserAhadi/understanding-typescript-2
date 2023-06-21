@@ -17,3 +17,8 @@ function generateError(message, code) {
 // const result = generateError("An error occured", 500);
 // console.log(result);
 console.log(555);
+
+const button = document.querySelector("button");
+button === null || button === void 0 ? void 0 : button.addEventListener("click", () => {
+    console.log("clicked");
+});
