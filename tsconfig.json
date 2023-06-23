@@ -55,7 +55,7 @@
     "sourceMap": true,                                /* Create source map files for emitted JavaScript files. */
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
+    "outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
     // "removeComments": true,                           /* Disable emitting comments. */
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
@@ -112,13 +112,18 @@
     // "functions.ts",
     "node_modules", //  would be the default
     "*.dev.ts",  // any file with extension of .dev.ts
-    "**/*.dev.ts" // in any directory and any file with extension of .dev.ts
+    "**/*.dev.ts", // in any directory and any file with extension of .dev.ts,
+    "src/union-aliases.ts",
+    "src/lesson2-finish-core-types.ts",
+    "src/functions.ts",
+    "src/basics.ts",
+    "user"
   ],
   // all files which we input in include array, only they are compiled
-  "include": [
-    "analytics.ts",
-    "app.ts"
-  ],
+  // "include": [
+  //   "src/analytics.ts",
+  //   "src/app.ts"
+  // ],
   // files is like include but the difference is we can't set directory in the list and just set file name
   // "files":[
   //   "app.ts"
